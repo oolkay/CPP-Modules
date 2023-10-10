@@ -4,7 +4,6 @@ int main(int argc, char **argv)
 {
     int i;
     int j;
-    std::string ucstring = "";
 
     i = 1;
     j = 0;
