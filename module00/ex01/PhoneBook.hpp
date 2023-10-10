@@ -4,8 +4,8 @@
 class PhoneBook
 {
     private:
-    Contact contacts[8];
+        Contact contacts[8];
     public:
-    void addContact(int indx);
-    void searchContact(int indx);
+        void addContact(int indx);
+        void searchContact(int indx);
 };

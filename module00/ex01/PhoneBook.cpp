@@ -16,7 +16,8 @@ void handleField(std::string str)
     int len;
 
     len = str.length();
-    std::cout << '|' << std::setw(10);
+    std::cout << '|';
+    std::cout << std::setw(10); //stream manipulator, streaming genişliği 10 karakter olacak
     if (len < 10)
         std::cout << str;
     else

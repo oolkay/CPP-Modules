@@ -1,5 +1,5 @@
 # Rep: ex02
-all: compile clean
+all: compile
 
 compile:
 	c++ -Wall -Werror -Wextra -std=c++98 tests.cpp Account.cpp -o program
