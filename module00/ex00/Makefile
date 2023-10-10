@@ -1,4 +1,4 @@
-all: compile clean
+all: compile
 
 compile: megaphone.cpp
 	c++ -Wall -Werror -Wextra -std=c++98 megaphone.cpp -o megaphone
