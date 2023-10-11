@@ -30,7 +30,7 @@ void    Contact::setSecret()
 
 void    Contact::setNumber()
 {
-    std::cout << "Enter the number: ";
+    std::cout << "Enter the phone number: ";
     std::getline(std::cin, this->number);
 }
 

@@ -4,11 +4,15 @@
 
 void PhoneBook::addContact(int indx)
 {
-    this->contacts[indx].setFname();
-    this->contacts[indx].setSname();
-    this->contacts[indx].setNname();
-    this->contacts[indx].setSecret();
-    this->contacts[indx].setNumber();
+    std::cout << "\n\n";
+    std::cout << MAGENTA;
+    this->contacts[indx % 8].setFname();
+    this->contacts[indx % 8].setSname();
+    this->contacts[indx % 8].setNname();
+    this->contacts[indx % 8].setNumber();
+    this->contacts[indx % 8].setSecret();
+    std::cout << DEFAULT;
+    std::cout << "\n\n";
 }
 
 void handleField(std::string str)
@@ -29,9 +33,12 @@ void displayContacts(Contact list[], int indx)
     int i;
 
     i = 0;
+    std::cout << MAGENTA;
     std::cout << ' ' << std::string(43, '_') << std::endl;
 	std::cout << "|     Index|      Name|   Surname|  Nickname|\n";
     std::cout << ' ' << std::string(43, '-') << std::endl;
+    if (indx > 8)
+        indx = 8;
     while (i < indx)
     {
         std::cout << '|' << std::setw(10) << i;
@@ -42,10 +49,12 @@ void displayContacts(Contact list[], int indx)
         std::cout << ' ' << std::string(43, '-') << std::endl;
         i++;
     }
+    std::cout << DEFAULT;
 }
 
 void displayPerson(Contact person)
 {
+    std::cout << MAGENTA;
     std::cout << ' ' << std::string(21, '_') << std::endl;
 	std::cout << "|      Name";
     handleField(person.getFname());
@@ -67,25 +76,30 @@ void displayPerson(Contact person)
     handleField(person.getNumber());
     std::cout << '|' << std::endl;
     std::cout << ' ' << std::string(21, '-') << std::endl;
+    std::cout << DEFAULT;
 }
 
-void PhoneBook::searchContact(int indx)
+void PhoneBook::searchContact(int contactNumber)
 {
     int i;
 
-    if (indx == 0)
+
+    std::cout << "\n\n";
+    if (contactNumber == 0)
     {
         std::cout << "There is no contacts!" << std::endl;
         return ;
     }
-    displayContacts(this->contacts, indx);
+    displayContacts(this->contacts, contactNumber);
     std::cout << "Enter the index: ";
     std::cin >> i;
 
-    while (i < 0 || i > indx)
+    while (i < 0 || i >= 8 || i >= contactNumber)
     {
         std::cout << "Wrong index!" << std::endl;
+        std::cout << "Enter the index: ";
         std::cin >> i;
     }
     displayPerson(this->contacts[i]);
+    std::cout << "\n\n";
 }

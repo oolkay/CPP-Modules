@@ -1,10 +1,41 @@
-# Rep: ex01
-all: compile
+DEFAULT = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
 
-compile:
-	c++ -Wall -Werror -Wextra -std=c++98 PhoneBook.cpp Contact.cpp main.cpp -o program
+NAME = phonebook
+CC = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+SRC = Contact.cpp PhoneBook.cpp main.cpp
+OBJ = $(SRC:.cpp=.o)
+
+all: ${NAME}
+
+${NAME}: ${OBJ}
+	@echo "${YELLOW}🧑‍💻Compilation has started🧑‍💻${DEFAULT}"
+	@sleep 0.4
+	@${CC} ${FLAGS} ${OBJ} -o ${NAME}
+	@echo "${GREEN}📣${NAME} IS READY!!📣${DEFAULT}"
+	@sleep 0.4
+
+%.o: %.cpp
+	@${CC} ${FLAGS} -c $< -o $@
 
 clean:
-	rm -rf program
+	@rm -f ${OBJ}
+	@echo "${RED}🗑️Object files are being deleted🗑️${DEFAULT}"
+	@sleep 0.4
 
-.PHONY: all compile clean
+fclean: clean
+	@rm -f ${NAME}
+	@echo "${RED}🗑️Executable file is being deleted🗑️${DEFAULT}"
+	@sleep 0.4
+
+re: fclean all
+
+.PHONY: all clean re
