@@ -5,14 +5,11 @@
 
 class HumanA
 {
-    //weapon constructorı calısmadan HumanA objesi olusturabilmek
-    //için ya pointer ya da reference kullanmak gerekiyor.
-    //constructor içinde initialize ettiğimiz için burda reference
-    Weapon& wep;
     std::string name;
+    Weapon wep;
     public:
         void attack( void );
-        HumanA( std::string name, Weapon& wep );
+        HumanA( std::string name, Weapon wep );
 };
 
 #endif

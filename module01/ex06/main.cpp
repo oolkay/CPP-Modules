@@ -13,27 +13,20 @@ int loglevels( std::string level)
 int printlogs ( std::string level, Harl harl)
 {
     int n = loglevels(level);
-    while (n < 4)
+    switch (n)
     {
-        switch (n)
-        {
-            case 0:
-                harl.complain("DEBUG");
-                break;
-            case 1:
-                harl.complain("INFO");
-                break;
-            case 2:
-                harl.complain("WARNING");
-                break;
-            case 3:
-                harl.complain("ERROR");
-                break;
-            default:
-                std::cout << "Usage: ./harl [DEBUG|INFO|WARNING|ERROR]" << std::endl;
-                return (-1);
-        }
-        n++;
+        case 0:
+            harl.complain("DEBUG");
+        case 1:
+            harl.complain("INFO");
+        case 2:
+            harl.complain("WARNING");
+        case 3:
+            harl.complain("ERROR");
+            break;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+            return (-1);
     }
     return (1);
 
@@ -41,15 +34,13 @@ int printlogs ( std::string level, Harl harl)
 
 int main(int argc, char **argv)
 {
+    Harl harl;
+
     if (argc != 2)
     {
-        std::cout << "Usage: ./harl [DEBUG|INFO|WARNING|ERROR]" << std::endl;
+        std::cout << "Usage: ./harlFilter [DEBUG|INFO|WARNING|ERROR]" << std::endl;
         return (-1);
-    } 
-    else
-    {
-        Harl harl;
-        printlogs(argv[1], harl);
-        return (1);
     }
+    printlogs(argv[1], harl);
+    return (1);
 }

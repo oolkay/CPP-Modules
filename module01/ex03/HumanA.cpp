@@ -8,7 +8,7 @@ void HumanA::attack()
     std::cout << type << std::endl; 
 }
 
-HumanA::HumanA( std::string name, Weapon& wep ): wep(wep)
+HumanA::HumanA( std::string name, Weapon wep ): wep(wep)
 {
     this->name = name;
 }
