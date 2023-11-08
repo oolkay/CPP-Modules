@@ -6,29 +6,21 @@
 
 class Point
 {
-    private:
-        Fixed const x;
-        Fixed const y;
     public:
-        //Constructors
         Point();
-        Point(const Fixed, const Fixed);
+        Point(const float x, const float y);
         Point(Point const &src);
-
-        //Destructor
         ~Point();
-
-        //Assignation operator overload
         Point &operator=(const Point& rhs);
         bool operator==(const Point& rhs) const;
-
-        //getters
         Fixed getX(void) const;
         Fixed getY(void) const;
+    private:
+        Fixed const _x;
+        Fixed const _y;
 };
 
-bool bsp(Point &a, Point &b, Point &c, Point &p);
-
-
+std::ostream &operator<<(std::ostream &o, Point const &rhs);
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

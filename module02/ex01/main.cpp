@@ -1,16 +1,18 @@
 #include "Fixed.hpp"
 #include <iostream>
+#include <string>
 
 int main()
 {
-    Fixed		a;
+    Fixed		a; 
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
 	Fixed const d( b );
 
 	a = Fixed( 1234.4321f );
 
-
+	std::cout << CYAN << std::string(15, '-') << "VALUES" <<
+				std::string(15,'-') << std::endl;
 	std::cout << "a is " << a << std::endl; // 1234.43
 	std::cout << "b is " << b << std::endl; // 10
 	std::cout << "c is " << c << std::endl; // 42.42
@@ -20,6 +22,8 @@ int main()
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl; // 10
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl; // 42
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl; // 10
+	std::cout << CYAN << std::string(15, '-') << "VALUES" <<
+				std::string(15,'-') << DEFAULT <<std::endl;
 
 	return 0;
 }

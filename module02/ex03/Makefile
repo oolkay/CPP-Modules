@@ -1,14 +1,23 @@
-FLAGS= -Wall -Wextra -Werror -std=c++98
-CC= c++
-SRC= Fixed.cpp \
-	 main.cpp \
-	 Point.cpp \
-	 bsp.cpp
+NAME = bsp
+SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
+OBJ = $(SRC:.cpp=.o)
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: compile
+all: $(NAME)
 
-compile:
-	@$(CC) $(FLAGS) $(SRC) -o bsp
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf bsp
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: clean fclean all
+
+.PHONY: all clean fclean re

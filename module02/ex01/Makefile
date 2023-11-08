@@ -1,6 +1,24 @@
-all: compile run
+NAME = Fixed
+SRC = main.cpp Fixed.cpp
+OBJ = $(SRC:.cpp=.o)
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-compile: main.cpp Fixed.cpp
-	@c++ -Wall -Werror -Wextra -std=c++98 main.cpp Fixed.cpp -o Fixed
-run:
-	@./Fixed
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: clean fclean all
+
+.PHONY: all clean fclean re
