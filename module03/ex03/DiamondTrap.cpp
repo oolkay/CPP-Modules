@@ -10,7 +10,7 @@ DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
     this->_attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& rhs): ScavTrap(rhs._name), FragTrap(rhs._name)
+DiamondTrap::DiamondTrap(const DiamondTrap& rhs): ScavTrap(rhs), FragTrap(rhs) // name mi rhs mi ?
 {
     std::cout << GREEN << "~~~DiamondTrap copy constructor called~~~" << DEFAULT << std::endl;
     *this = rhs;
