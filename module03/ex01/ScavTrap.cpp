@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap(): ClapTrap() // burayı sor?=? ClapTrap cagırmasakta oluyor.
 {
-    std::cout << "ScavTrap " << _name << " is created from ClapTrap by default constructor" << std::endl;
+    std::cout << GREEN << "ScavTrap " << _name << " is created from ClapTrap by default constructor" << DEFAULT << std::endl;
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
@@ -10,7 +10,7 @@ ScavTrap::ScavTrap(): ClapTrap() // burayı sor?=? ClapTrap cagırmasakta oluyor
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-    std::cout << "ScavTrap " << name << " is created from ClapTrap by parameterized constructor" << std::endl;
+    std::cout << GREEN <<"ScavTrap " << name << " is created from ClapTrap by parameterized constructor" << DEFAULT << std::endl;
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& rhs): ClapTrap(rhs)
 {
-    std::cout << "ScavTrap " << rhs._name << " is created by copy constructor" << std::endl;
+    std::cout << GREEN <<"ScavTrap " << rhs._name << " is created by copy constructor" <<DEFAULT << std::endl;
     *this = rhs;
 }
 
@@ -37,7 +37,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap " << _name << " is destroyed by destructor" << std::endl;
+    std::cout << RED <<"ScavTrap " << _name << " is destroyed by destructor" << DEFAULT <<std::endl;
 }
 
 void ScavTrap::guardGate()
@@ -50,5 +50,5 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(std::string const &target)
 {
-    std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+    std::cout << "ScavTrap " << _name << " attacks brutally " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }

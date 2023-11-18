@@ -7,9 +7,21 @@ int main()
     ClapTrap    clapObj3("Baha");
     ClapTrap    clapObj4 = clapObj3;
     clapObj.attack("Baha");
-    std::cout << MAGENTA << "HP: " << clapObj.getHitPoints() << DEFAULT << std::endl;
+    std::cout << MAGENTA << "HP: " << clapObj2.getHitPoints() << DEFAULT << std::endl;
     clapObj.takeDamage(200);
     std::cout << MAGENTA << "HP: " << clapObj.getHitPoints() << DEFAULT << std::endl;
     clapObj.beRepaired(2);
     std::cout << MAGENTA << "HP: " << clapObj.getHitPoints() << DEFAULT << std::endl;
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
+    // clapObj3.attack("air");
 }

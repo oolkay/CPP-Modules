@@ -1,16 +1,22 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int main()
+int main( void )
 {
-    FragTrap ftrap;
-    FragTrap ftrap2("omer");
-    ftrap.attack("baha");
-    ftrap.takeDamage(10);
-    ftrap.takeDamage(10);
-    std::cout << ftrap.getHitPoints() << std::endl;
-    ftrap.beRepaired(10);
-    std::cout << ftrap.getHitPoints() << std::endl;
-    ftrap.highFivesGuys();
-    ftrap2.highFivesGuys();
+    DiamondTrap dt1( "omer" );
+    DiamondTrap dt2( dt1 );
+    DiamondTrap dt3("oolkay");
+
+    dt1.whoAmI();
+    dt2.whoAmI();
+    dt3 = dt1;
+    dt3.whoAmI();
+
+    dt1.attack( "oolkay" );
+    dt1.takeDamage( 10 );
+    dt1.ScavTrap::takeDamage( 20 );
+    dt1.beRepaired( 10 );
+
+    return (0);
 }
