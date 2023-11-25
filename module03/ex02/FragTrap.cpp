@@ -42,8 +42,8 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys(void)
 {
-    if (_hitPoints > 0)
+    if (_hitPoints > 0 && _energyPoints > 0)
         std::cout << CYAN << "FragTrap " << _name << " says: High five, guys!" << DEFAULT << std::endl;
     else
-        std::cout << CYAN << "FragTrap " << _name << " is dead" << DEFAULT << std::endl;
+        std::cout << CYAN << "FragTrap " << _name << " is dead or it has no energy" << DEFAULT << std::endl;
 }

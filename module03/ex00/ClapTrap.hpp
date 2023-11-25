@@ -38,5 +38,4 @@ class ClapTrap
         int _energyPoints; 
         int _attackDamage; 
 };
-
 #endif

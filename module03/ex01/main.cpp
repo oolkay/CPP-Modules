@@ -16,8 +16,9 @@ int main()
 
     ScavTrap obj2;
     scavObj.attack("Omer");
+    //scavObj.ClapTrap::attack("Omer2");
     std::cout << MAGENTA << "HP: " << scavObj.getHitPoints() << DEFAULT << std::endl;
-    scavObj.takeDamage(5);
+    scavObj.takeDamage(20);
     std::cout << MAGENTA << "HP: " << scavObj.getHitPoints() << DEFAULT << std::endl;
     scavObj.beRepaired(2);
     std::cout << MAGENTA << "HP: " << scavObj.getHitPoints() << DEFAULT << std::endl;

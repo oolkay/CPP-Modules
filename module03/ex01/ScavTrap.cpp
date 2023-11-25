@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(): ClapTrap() // burayı sor?=? ClapTrap cagırmasakta oluyor.
+ScavTrap::ScavTrap(): ClapTrap()
 {
     std::cout << GREEN << "ScavTrap " << _name << " is created from ClapTrap by default constructor" << DEFAULT << std::endl;
     _hitPoints = 100;

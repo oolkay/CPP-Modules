@@ -81,6 +81,8 @@ void ClapTrap::beRepaired(unsigned int amount)
         return ;
     }
     _hitPoints += amount;
+    if (_hitPoints > 10)
+        _hitPoints = 10;
     _energyPoints--;
     std::cout << "ClapTrap " << this->_name << " has been repaired " << amount << " points!" << std::endl;
 }
