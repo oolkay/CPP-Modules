@@ -3,7 +3,7 @@
 
 int main()
 {
-    Animal *animals[10];
+    AAnimal *animals[10];
     for (int i = 0; i < 10; i++)
     {
         if (i < 5)
@@ -11,19 +11,16 @@ int main()
         else
             animals[i] = new Cat();
     }
-    Animal j = *(animals[3]);
+    std::cout << animals[2]->getType() << std::endl;
+    AAnimal j = *(animals[3]);
+    // std::cout << j.getType() << std::endl;
+    // j.makeSound();
     for (int i = 0; i < 10; i++)
         animals[i]->makeSound();
     std::cout << std::endl;
     for (int i = 0; i < 10; i++)
         delete animals[i];
     std::cout << std::endl;
-    std::cout << j.getType() << std::endl;
-    j.makeSound();
-
-    Cat cat1;
-
-    Cat cat2(cat1);
 
 
 
@@ -44,9 +41,4 @@ int main()
     std::cout << "Adress of dog2 brain: "<< dog2->getBrain() << std::endl;
     delete dog1;
     delete dog2;
-    Dog basic;
-    {
-        Dog tmp = basic;
-    }
-    std::cout << basic.getType() << std::endl;
 }

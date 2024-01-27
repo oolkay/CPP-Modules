@@ -2,6 +2,11 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
+int a = 5;
+
+int *nbr = &a;
+int *ptr = nbr;
+
 
 int main()
 {
@@ -71,6 +76,7 @@ int main()
     std::cout << "DELETE\n";
     delete obj4;
     delete obj5;
+    delete obj6;
 
 
 

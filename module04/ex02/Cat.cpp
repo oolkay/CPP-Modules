@@ -1,12 +1,12 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
     brain = new Brain();
     std::cout << "[CAT] Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &copy)
+Cat::Cat(const Cat &copy) : AAnimal(copy)
 {
     std::cout << "[CAT] Cat copy constructor called" << std::endl;
     _type = copy._type;
@@ -18,13 +18,12 @@ Cat::Cat(const Cat &copy)
 Cat::~Cat()
 {
     std::cout << "[CAT] Cat destructor called" << std::endl;
-    if (brain)
-        delete brain;
+    delete brain;
 }
 
 Cat &Cat::operator=(const Cat &copy)
 {
-    Animal::operator=(copy);
+    AAnimal::operator=(copy);
     std::cout << "[CAT] Cat assignation operator called" << std::endl;
     if (this != &copy)
     {
